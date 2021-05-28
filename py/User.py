@@ -11,6 +11,9 @@ class User:
         self.__passwd = password
         self.__favourite = []
 
+    def add_favourite_drink(self, cocktail):
+        self.__favourite.append(cocktail)
+
     def get_login(self):
         return self.__login
 
