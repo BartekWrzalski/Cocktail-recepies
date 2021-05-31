@@ -12,3 +12,5 @@ This is a desktop app with a graphical interface for searching cocktails using [
 ### Warning
 This app will not work if you do not have API key. If you have one, 
 please modify file `py/config.py` and put it in place `<KEY>`.
+
+Free version not supported.
