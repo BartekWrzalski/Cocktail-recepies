@@ -615,6 +615,7 @@ class MainApp(QtWidgets.QMainWindow):
             self.add_to_fav_button.setIcon(self.icon_fav)
 
     def logout(self):
+        self.search_edit.setText("")
         self.hide()
         self.parent().show()
         save_pickled()
