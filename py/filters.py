@@ -27,20 +27,17 @@ def lookup_popular():
 
 
 def get_filter_by_ingredients(ingredients):
-    ingredients = ingredients.replace(", ", ",").replace(" ", "")
+    ingredients = ingredients.replace(", ", ",")
     return requests.get(const.filter_by_ingredients + ingredients).json()['drinks']
 
 
 def get_filter_by_glass(glass):
-    glass = glass.replace(" ", "_")
     return requests.get(const.filter_by_glass + glass).json()['drinks']
 
 
 def get_filter_by_category(category):
-    category = category.replace(" ", "_")
     return requests.get(const.filter_by_category + category).json()['drinks']
 
 
 def get_filter_by_alcoholic(alcoholic):
-    alcoholic = alcoholic.replace(" ", "_")
     return requests.get(const.filter_by_alcoholic + alcoholic).json()['drinks']

@@ -46,3 +46,6 @@ filter_by_category = f"https://www.thecocktaildb.com/api/json/{KEY}/filter.php?c
 
 # Filter by glass
 filter_by_glass = f"https://www.thecocktaildb.com/api/json/{KEY}/filter.php?g="
+
+# Image of ingredient
+image_of_ingredient = "https://www.thecocktaildb.com/images/ingredients/"

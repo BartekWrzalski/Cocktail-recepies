@@ -1,1 +1,1 @@
-cocktail_key = 'v1/1'
+cocktail_key = 'v2/<KEY>'
