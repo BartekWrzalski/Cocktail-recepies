@@ -521,16 +521,19 @@ class MainApp(QtWidgets.QMainWindow):
 
         for i in range(0, 12):
             if not cocktail['strIngredient' + str(i + 1)]:
-                break
-            url = str(image_of_ingredient + cocktail['strIngredient' + str(i + 1)] + "-Small.png")
-            data = urllib.request.urlopen(url).read()
-            image = QtGui.QImage()
-            image.loadFromData(data)
-            pixmap = QtGui.QPixmap.fromImage(image)
+                self.ingr_img[i].clear()
+                self.ingr_names[i].setText("")
+                self.ingr_meas[i].setText("")
+            else:
+                url = str(image_of_ingredient + cocktail['strIngredient' + str(i + 1)] + "-Small.png")
+                data = urllib.request.urlopen(url).read()
+                image = QtGui.QImage()
+                image.loadFromData(data)
+                pixmap = QtGui.QPixmap.fromImage(image)
 
-            self.ingr_img[i].setPixmap(pixmap)
-            self.ingr_names[i].setText(cocktail['strIngredient' + str(i + 1)])
-            self.ingr_meas[i].setText(cocktail['strMeasure' + str(i + 1)])
+                self.ingr_img[i].setPixmap(pixmap)
+                self.ingr_names[i].setText(cocktail['strIngredient' + str(i + 1)])
+                self.ingr_meas[i].setText(cocktail['strMeasure' + str(i + 1)])
 
         self.cocktail_decription.setText(cocktail['strInstructions'])
         if any(self.cocktail_id.text() == fav['idDrink'] for fav in User.currentUser.get_favourite()):
